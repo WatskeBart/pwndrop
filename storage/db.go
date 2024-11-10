@@ -61,7 +61,7 @@ func initConfig() error {
 		o = &DbConfig{
 			ID:          1,
 			SecretPath:  "/pwndrop",
-			RedirectUrl: "https://www.youtube.com/watch?v=oHg5SJYRHA0",
+			RedirectUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 			CookieName:  utils.GenRandomString(4),
 			CookieToken: utils.GenRandomHash(),
 		}
