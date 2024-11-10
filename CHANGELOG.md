@@ -1,3 +1,6 @@
+****v1.1.0****
+- [x] Added capability to define a custom DNS port in the pwndrop.ini (default port is 53/udp) 
+
 ****v1.0.3****
 - [x] Added capability to upload via command line utilities. This is done by saving a key to the browser's local storage upon a successful login. Users can supply the Authorization header with the key to upload files. Also added a green button to the UI, under 'Upload', so you can copy ready made cURL commands with your key included. Now you can also force the mime-type you would like to set through HTTP header - x-pwndrop-content-type.
 - [x] Upgraded included dependencies versions as well as Go version. This fixes the autocert fails issues when requesting the server with a domain.
