@@ -6,7 +6,7 @@ all: build
 
 build:
 	@echo "*** building..."
-	@GOARCH=go build -ldflags="-s -w" -o $(BUILD_DIR)/$(TARGET)
+	@go build -ldflags="-s -w" -o $(BUILD_DIR)/$(TARGET)
 	@rm -rf $(BUILD_DIR)/admin
 	@echo "*** copying new admin panel"
 	@cp -r ./www $(BUILD_DIR)/admin
