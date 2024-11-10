@@ -114,13 +114,13 @@ First of all, make sure you have installed GO with version at least **1.18**: ht
 
 Then do the following:
 
-```
+```bash
 sudo apt-get -y install git make
 git clone https://github.com/WatskeBart/pwndrop
 cd pwndrop
-make
-make install
+make build
 ```
+Binary will be in the `build/` directory
 
 ## Quickstart
 
