@@ -28,7 +28,7 @@ curl -X POST -H "x-pwndrop-content-type: application/javascript" -H "Authorizati
 The original installation files were removed as we are going to Go Get the necessary dependencies.
 This installation was tested with GO version: **1.18.4**: https://go.dev/dl/
 
-Go Installtion example (https://go.dev/doc/install):
+Go Installation example (https://go.dev/doc/install):
 ```
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.4.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
@@ -86,12 +86,6 @@ Frontend of **pwndrop** is developed in pure Vue.js + Bootstrap with no npm or w
 If you want to learn how to use **pwndrop** or you want to learn what new features were implemented in recent releases, make sure to check out the posts on my blog:
 
 https://breakdev.org/pwndrop
-
-## Video guide
-
-Take a look at the fantastic video made by Luke Turvey ([@TurvSec](https://twitter.com/TurvSec)), which fully explains how to get started using **pwndrop**.
-
-[![File and Phishing Payload Hosting using PwnDrop (Red Team) - Luke Turvey](https://img.youtube.com/vi/e3veSyIFvOE/0.jpg)](https://www.youtube.com/watch?v=e3veSyIFvOE)
 
 ## Prerequisites
 
@@ -162,17 +156,18 @@ On first launch, **pwndrop**, by default, will create a new configuration file `
 Here is an example config file with all available config variables with commentary:
 ```
 [pwndrop]
-listen_ip = "123.123.123.123"                  # the external IP of your pwndrop instance (must be set if you want to use the nameserver feature)
-http_port = 80                              # listening port for HTTP and WebDAV
+listen_ip  = "123.123.123.123"              # the external IP of your pwndrop instance (must be set if you want to use the nameserver feature)
+http_port  = 80                             # listening port for HTTP and WebDAV
 https_port = 443                            # listening port for HTTPS
-data_dir = "./data"                         # directory path where data storage will reside (relative paths are from executable directory path)
-admin_dir = "./admin"                       # directory path where the admin panel files reside (relative paths are from executable directory path)
+dns_port   = 53                             # listening port for DNS
+data_dir   = "./data"                       # directory path where data storage will reside (relative paths are from executable directory path)
+admin_dir  = "./admin"                      # directory path where the admin panel files reside (relative paths are from executable directory path)
 
 [setup]                                     # optional: put in if you want to pre-configure pwndrop (section will be deleted from the config file on first run)
-username = "admin"                          # username of the admin account
-password = "secretpassword"                 # password of the admin account
+username     = "admin"                      # username of the admin account
+password     = "secretpassword"             # password of the admin account
 redirect_url = "https://www.somedomain.com" # URL to which visitors will be redirected to if they supply a path, which doesn't point to any shared file (put blank if you want to return 404)
-secret_path = "/pwndrop"                    # secret URL path, which upon visiting will allow your browser to access the login page of the admin panel (make sure to change the default value)
+secret_path  = "/pwndrop"                   # secret URL path, which upon visiting will allow your browser to access the login page of the admin panel (make sure to change the default value)
 ```
 
 If you want to pre-configure your **pwndrop** instance before deployment using any of the installation scripts, put your configuration file at `/usr/local/pwndrop/pwndrop.ini` and it will be parsed the moment **pwndrop** daemon is first executed.
