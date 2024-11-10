@@ -21,7 +21,8 @@ func NewNameserver(ch_exit *chan bool) (*Nameserver, error) {
 	}
 
 	listen_ip := Cfg.GetListenIP()
-	dns_host := fmt.Sprintf("%s:%d", listen_ip, 53)
+	dns_port := Cfg.GetDnsPort()
+	dns_host := fmt.Sprintf("%s:%d", listen_ip, dns_port)
 
 	dns.HandleFunc(".", n.handleRequest)
 

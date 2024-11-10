@@ -17,6 +17,7 @@ const (
 	INI_VAR_LISTEN_IP  = "listen_ip"
 	INI_VAR_HTTP_PORT  = "http_port"
 	INI_VAR_HTTPS_PORT = "https_port"
+	INI_VAR_DNS_PORT   = "dns_port"
 	INI_VAR_DATA_DIR   = "data_dir"
 	INI_VAR_ADMIN_DIR  = "admin_dir"
 
@@ -47,6 +48,7 @@ func NewConfig(path string) (*Config, error) {
 		INI_VAR_LISTEN_IP:  "",
 		INI_VAR_HTTP_PORT:  "80",
 		INI_VAR_HTTPS_PORT: "443",
+		INI_VAR_DNS_PORT:   "53",
 		INI_VAR_DATA_DIR:   data_dir,
 		INI_VAR_ADMIN_DIR:  admin_dir,
 	}
@@ -158,6 +160,12 @@ func (c *Config) GetHttpPort() int {
 
 func (c *Config) GetHttpsPort() int {
 	s, _ := c.Get(INI_VAR_HTTPS_PORT)
+	port, _ := strconv.Atoi(s)
+	return port
+}
+
+func (c *Config) GetDnsPort() int {
+	s, _ := c.Get(INI_VAR_DNS_PORT)
 	port, _ := strconv.Atoi(s)
 	return port
 }
