@@ -44,8 +44,8 @@ var appFile = Vue.component("app-file", {
 			<div class="col-auto shrink clip">
 				<span class="btn-col">
 					<a class="btn-copy" ref="copyUrl" href @click.prevent="copyHttpUrl()">
-						<button class="btn btn-sm btn-outline-success btn-copy-link" v-tooltip:bottom="'Copy HTTP link to clipboard'">
-							<i class="fas fa-copy" style="margin-right: 5px"></i>HTTP
+						<button class="btn btn-sm btn-outline-success btn-copy-link" v-tooltip:bottom="'Copy HTTP(S) link to clipboard'">
+							<i class="fas fa-copy" style="margin-right: 5px"></i>HTTP(S)
 						</button>
 					</a>
 				</span>
